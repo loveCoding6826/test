@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    <!-- 生命周期：一个事物从诞生到消亡的过程-->
+//Vue生命周期
+    new Vue({//做了很多操作
+       el:'#app',
+        data:{},
+        methods:{},
+// vue生命周期的函数： 钩子函数
+        beforeCreate:function(){},
+        created: function(){//内部做网络请求，获得请求数据放在data中
+            console.log("created");
+        },
+        mounted: function(){
+            console.log("mounted");
+        }
+    })
+// 源码：github.com=》vue=>vue/vue.js
+//项目的版本：debug(开发的)/release(发布的)
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .colorChange{
+      color:red;
+    }
+  </style>
+</head>
+<body>
+<!--作业需求：点击列表中的哪一项，那么该项的文字变为红色-->
+  <div id="app">
+    <ul>
+      <li v-bind:class="{colorChange:isRed}" v-for="(item,index) in movies" v-on:click="clickMe()">{{item}}</li>
+    </ul>
+  </div>
+    <script src="../js/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el:'#app',
+        data:{
+          movies:['海王','海尔兄弟','火影忍者','进击的巨人'],
+          isRed:false
+        },
+        methods:{
+          clickMe:function(){
+            this.isRed = true;
+          }
+        }
+      });
+    </script>
+</body>
+</html>

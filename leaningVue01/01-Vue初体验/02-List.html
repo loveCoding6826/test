@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li>{{movies[0]}}</li>
+            <li>{{movies[1]}}</li>
+            <li>{{movies[2]}}</li>
+            <li>{{movies[3]}}</li>
+        </ul>
+        <!-- vue中使用指令v-for遍历数组-->
+        <ul>
+            <li v-for="item in movies">{{item}}</li>
+        </ul>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message:'你好啊！',
+//            angularjs中是使用的repeat做循环遍历的
+//            在Vue中是使用v-for
+            movies:['星际穿越','大话西游','少年派','盗梦空间']
+        }
+    });
+</script>
+</html>

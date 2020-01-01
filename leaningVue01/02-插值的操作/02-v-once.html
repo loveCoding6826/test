@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<!--v-once指令后不用跟任何表达式；该指令表示元素和组件只渲染一次，不会随数据的改变而改变-->
+  <div id="app">
+    <h2 v-once>{{message}}</h2>
+    <h2>{{message}}</h2>
+  </div>
+    <script src="../js/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el:'#app',
+        data:{
+          message:"你好啊"
+        },
+        methods:{}
+      });
+    </script>
+</body>
+</html>

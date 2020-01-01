@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        当前计数：{{counter}}
+        <!-- @click用于监听某个元素的点击事件，事件的方法定义在methods中-->
+    <button v-on:click="add">+</button>
+    <button @click="sub">-</button>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    <!-- 语法糖：简写 @是v-on的语法糖-->
+    const app = new Vue({
+// el的类型可以是string\HTMLElement
+// 决定之后Vue实例会管理哪一个DOM
+        el:'#app',  //1、挂在要管理的数据
+// data的类型是object\function（组件中data必须是函数）
+//Vue实例对应的数据对象
+        data:{      //2、存储数据的：自定义、服务器返回
+         counter:0
+        },
+//methods的类型是{[key:string]：function}
+//定义属于Vue的一些方法，可以在其他地方调用，也可以在指令中使用
+        methods:{   //3、用于在Vue对象中定义方法
+            add:function(){
+              this.counter++; //this意思是此对象中的
+            },
+            sub:function(){
+                this.counter--;
+            }
+        }
+//注意：开发中什么时候称之为方法，何时称之为函数
+// 方法和Vue实例挂钩的，类中的东西叫方法
+    });
+</script>
+</html>
